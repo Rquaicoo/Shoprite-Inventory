@@ -20,7 +20,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="White" CornerRadius="0,20,20,0">
+            <Border Grid.Column="0" Background="white" CornerRadius="0,20,20,0">
                 <Grid Height="500" VerticalAlignment="Top" Margin="30, 180, 30, 40">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -41,7 +41,7 @@
 
                     <StackPanel Grid.Row="1">
                         <TextBlock Text="Enter your username" Margin="50,0,50,10" />
-                        <TextBox Width="350" Height="50" TextChanged="TextBox_TextChanged">
+                        <TextBox Width="350" Height="50" TextChanged="TextBox_TextChanged" TextAlignment="Center" Padding="0,15,0,0" Name="username">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="8"/>
@@ -52,17 +52,21 @@
 
                     <StackPanel Grid.Row="2">
                         <TextBlock Text="Enter your password" Margin="50,0,50,10" />
-                        <TextBox Width="350" Height="50" TextChanged="TextBox_TextChanged">
-                            <TextBox.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="8"/>
+                        <PasswordBox Width="350" Height="50" Padding="0,15,0,0" Name="password">
+                            <PasswordBox.Style>
+                                <Style TargetType="{x:Type PasswordBox}">
+                                    <Style.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="8"/>
+                                        </Style>
+                                    </Style.Resources>
                                 </Style>
-                            </TextBox.Resources>
-                        </TextBox>
+                            </PasswordBox.Style>
+                        </PasswordBox>
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" Width="150" Height="40">
-                        <Button Height="40" Background="DodgerBlue">
+                        <Button Height="40" Background="DodgerBlue" Click="submitClick">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -81,8 +85,8 @@
 
             </Border>
 
-            <Border Grid.Column="1" Background="CadetBlue">
-
+            <Border Grid.Column="1" Background="#7CE0DB">
+                <Image Source="\Images\logo-red.png"/>
             </Border>
         </Grid>
     </Border>
