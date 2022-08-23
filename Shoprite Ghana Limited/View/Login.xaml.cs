@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace Shoprite_Ghana_Limited.View
 {
@@ -19,7 +20,11 @@ namespace Shoprite_Ghana_Limited.View
     /// </summary>
     public partial class Login : Window
     {
-        public Login()
+        private string usernameValue, passwordValue, sql;
+        private SqlConnection conn = new SqlConnection();
+        private MySqlCommand cmd;
+
+      public Login()
         {
             InitializeComponent();
         }
@@ -27,6 +32,22 @@ namespace Shoprite_Ghana_Limited.View
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             
+        }
+
+        private void submitClick(object sender, RoutedEventArgs e)
+        {
+            usernameValue = username.Text;
+            passwordValue = password.Password;
+
+            if (string.IsNullOrEmpty(usernameValue) || string.IsNullOrEmpty(passwordValue))
+            {
+                MessageBox.Show("Enter username or password");
+            }
+
+            else
+            {
+                Console.WriteLine(usernameValue, passwordValue);
+            }
         }
     }
 }
