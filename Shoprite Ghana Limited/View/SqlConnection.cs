@@ -20,10 +20,12 @@ namespace Shoprite_Ghana_Limited.View
         {
             server = "localhost";
             database = "shoprite";
-            user = "root";
-            password = "";
+            user = "russell";
+            password = "12345";
             string connectionString;
-            connectionString = "Data Source=" + server + ";Database=" + database + ";User Id=" + user + ";Password=" + password + "SSL Mode=0";
+            
+            
+            connectionString = "server=127.0.0.1;uid=russell;" + "pwd=12345;database=shoprite";
             conn = new MySqlConnection(connectionString);
         }
 

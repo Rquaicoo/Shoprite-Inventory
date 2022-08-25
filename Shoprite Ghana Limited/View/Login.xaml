@@ -10,7 +10,19 @@
        
         Title="Shoprite Ghana Limited" Height="700" Width="1000"
         >
-    
+    <Window.Resources>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border Name="border" CornerRadius="8" BorderThickness="1" Width="350" Height="50" BorderBrush="Black">
+                            <ScrollViewer Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
     <Border>
 
@@ -41,10 +53,11 @@
 
                     <StackPanel Grid.Row="1">
                         <TextBlock Text="Enter your username" Margin="50,0,50,10" />
-                        <TextBox Width="350" Height="50" TextChanged="TextBox_TextChanged" TextAlignment="Center" Padding="0,15,0,0" Name="username">
+                        <TextBox Width="350" Height="50" TextChanged="TextBox_TextChanged" TextAlignment="Left" Padding="0,15,0,0" Name="username" BorderBrush="Black">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="8"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
                                 </Style>
                             </TextBox.Resources>
                         </TextBox>
@@ -52,16 +65,8 @@
 
                     <StackPanel Grid.Row="2">
                         <TextBlock Text="Enter your password" Margin="50,0,50,10" />
-                        <PasswordBox Width="350" Height="50" Padding="0,15,0,0" Name="password">
-                            <PasswordBox.Style>
-                                <Style TargetType="{x:Type PasswordBox}">
-                                    <Style.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="8"/>
-                                        </Style>
-                                    </Style.Resources>
-                                </Style>
-                            </PasswordBox.Style>
+                        <PasswordBox Width="350" Height="50" Padding="0,15,0,0" Name="password" >
+                            
                         </PasswordBox>
                     </StackPanel>
 

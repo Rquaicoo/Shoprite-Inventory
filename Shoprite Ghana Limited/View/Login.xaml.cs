@@ -46,7 +46,31 @@ namespace Shoprite_Ghana_Limited.View
 
             else
             {
-                Console.WriteLine(usernameValue, passwordValue);
+                sql = "SELECT username, email FROM users WHERE username=" + "'" + usernameValue + "'" + " AND password=" + "'" + passwordValue + "';";
+                if (conn.openConnection() ==true)
+                {
+                    try
+                    {
+                        cmd = new MySqlCommand(sql, conn.get_connection());
+                        object a = cmd.ExecuteScalar();
+
+                        if(a == null)
+                        {
+                            MessageBox.Show("Invalid username or password");
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Everything is cool");
+                            this.Close();
+                        }
+                    }
+
+                    catch (MySqlException x)
+                    {
+                        MessageBox.Show("" + x);
+                    }
+                }
             }
         }
     }
