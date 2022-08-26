@@ -73,11 +73,11 @@
                     <StackPanel Grid.Row="3" Width="150" Height="40">
                         <Button Height="40" Background="DodgerBlue" Click="submitClick">
                             <Button.Resources>
-                                <Style TargetType="Border">
+                                <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="5"/>
                                 </Style>
                             </Button.Resources>
-                            <TextBlock FontWeight="Bold" FontSize="15" Foreground="white">Submit</TextBlock>
+                            <TextBlock FontWeight="Bold" FontSize="15" Foreground="white"><Run Text="Submit"/></TextBlock>
                         </Button>
                     </StackPanel>
 

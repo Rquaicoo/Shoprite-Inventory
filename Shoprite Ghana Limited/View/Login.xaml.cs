@@ -61,7 +61,10 @@ namespace Shoprite_Ghana_Limited.View
 
                         else
                         {
-                            MessageBox.Show("Everything is cool");
+                            //hide current window and open home.xaml
+
+                            Home home = new Home();
+                            home.Show();
                             this.Close();
                         }
                     }
