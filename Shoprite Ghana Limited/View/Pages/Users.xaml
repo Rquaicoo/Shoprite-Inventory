@@ -76,18 +76,18 @@
                 </Button>
             </Grid>
         </Border>
-        <DataGrid RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding userdataCollection}"
+        <DataGrid Name="UserDataGrid" RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding Path=UserDataBinding}"
                   SelectionChanged="DataGrid_SelectionChanged"
-                  x:Name="UserDataGrid"
+                  
                   AutoGenerateColumns="False"
                   Margin="10">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="10"/>
-                <DataGridTextColumn Header="Username" Width="150"/>
-                <DataGridTextColumn Header="Name" Width="150"/>
-                <DataGridTextColumn Header="Email" Width="150"/>
-                <DataGridTextColumn Header="Role" Width="150"/>
-                <DataGridTextColumn Header="Password" Width="150"/>
+                <DataGridTextColumn Header="Id" Width="10" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="Username" Width="150" Binding="{Binding Path=username}"/>
+                <DataGridTextColumn Header="Name" Width="150" Binding="{Binding Path=fullname}"/>
+                <DataGridTextColumn Header="Email" Width="150" Binding="{Binding Path=email}"/>
+                <DataGridTextColumn Header="Role" Width="150" Binding="{Binding Path=role}"/>
+                <DataGridTextColumn Header="Password" Width="150" Binding="{Binding Path=password}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
