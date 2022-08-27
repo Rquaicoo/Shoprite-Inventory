@@ -39,6 +39,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -64,6 +65,9 @@
     <Compile Include="ViewModel\Stock.cs" />
     <Compile Include="ViewModel\Till.cs" />
     <Compile Include="ViewModel\User.cs" />
+    <Compile Include="View\CategoryManagement\ManageCategories.xaml.cs">
+      <DependentUpon>ManageCategories.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -71,19 +75,28 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NavigationButton.cs" />
-    <Compile Include="View\Pages\AddUser.xaml.cs">
-      <DependentUpon>AddUser.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Pages\Categories.xaml.cs">
       <DependentUpon>Categories.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pages\EditUser.xaml.cs">
-      <DependentUpon>EditUser.xaml</DependentUpon>
+    <Compile Include="View\Pages\Products.xaml.cs">
+      <DependentUpon>Products.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pages\ViewUsers.xaml.cs">
-      <DependentUpon>ViewUsers.xaml</DependentUpon>
+    <Compile Include="View\Pages\Stock.xaml.cs">
+      <DependentUpon>Stock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Users.xaml.cs">
+      <DependentUpon>Users.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductManagment\ManageProducts.xaml.cs">
+      <DependentUpon>ManageProducts.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SqlConnection.cs" />
+    <Compile Include="View\StockManagement\ManageStock.xaml.cs">
+      <DependentUpon>ManageStock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManagement\CreateUser.xaml.cs">
+      <DependentUpon>CreateUser.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\CategoryManagement\ManageCategories.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,19 +125,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pages\AddUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Pages\Categories.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pages\EditUser.xaml">
+    <Page Include="View\Pages\Products.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pages\ViewUsers.xaml">
+    <Page Include="View\Pages\Stock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Users.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductManagment\ManageProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StockManagement\ManageStock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserManagement\CreateUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

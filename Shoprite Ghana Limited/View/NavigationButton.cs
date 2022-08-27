@@ -58,24 +58,24 @@ namespace Shoprite_Ghana_Limited.View
             get { return (Uri)GetValue(NavlinkProperty); }
             set { SetValue(NavlinkProperty, value); }
         }
-
+        
         // Using a DependencyProperty as the backing store for Navlink.  This enables animation, styling, binding, etc...
         //will be used for finding specific page in the application
         public static readonly DependencyProperty NavlinkProperty =
             DependencyProperty.Register("Navlink", typeof(Uri), typeof(NavigationButton), new PropertyMetadata(null));
 
+        
+        
 
-
-
-        public TextBlock Text
+        public string Text
         {
-            get { return (TextBlock)GetValue(TextProperty); }
+            get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof(TextBlock), typeof(NavigationButton), new PropertyMetadata(null));
+            DependencyProperty.Register("Text", typeof(string), typeof(NavigationButton), new PropertyMetadata(null));
 
 
 

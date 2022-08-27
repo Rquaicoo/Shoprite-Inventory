@@ -12,17 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Shoprite_Ghana_Limited.View.ProductManagment;
 
 namespace Shoprite_Ghana_Limited.View.Pages
 {
     /// <summary>
-    /// Interaction logic for ViewUsers.xaml
+    /// Interaction logic for Products.xaml
     /// </summary>
-    public partial class ViewUsers : Page
+    public partial class Products : Page
     {
-        public ViewUsers()
+        public Products()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ManageProducts manageProducts = new ManageProducts();
+            manageProducts.Show();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Page x:Class="Shoprite_Ghana_Limited.View.Pages.Categories"
+﻿<Page x:Class="Shoprite_Ghana_Limited.View.Pages.Stock"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Shoprite_Ghana_Limited.View.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Categories" Background="White">
+      Title="Stock" Background="White">
 
     <Grid>
 
@@ -28,8 +28,8 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
-                    <Path Stretch="Uniform" Margin="10,10,10,0" HorizontalAlignment="Left" Fill="#2a84f1" Height="25" Width="25" Data="M11,13.5V21.5H3V13.5H11M12,2L17.5,11H6.5L12,2M17.5,13C20,13 22,15 22,17.5C22,20 20,22 17.5,22C15,22 13,20 13,17.5C13,15 15,13 17.5,13Z"/>
-                    <TextBlock Text="Cartegory Management" Margin="10,0,10,7" VerticalAlignment="Bottom" FontSize="15" FontWeight="Bold" Foreground="#2a84f1"></TextBlock>
+                    <Path Stretch="Uniform" Margin="10,10,10,0" HorizontalAlignment="Left" Fill="#2a84f1" Height="25" Width="25" Data="M17,2A2,2 0 0,1 19,4V7A2,2 0 0,1 17,9V17C17,17.85 16.5,18.57 15.74,18.86L9.5,21.77C8.5,22.24 7.29,21.81 6.83,20.81L6,19C5.5,18 5.95,16.8 6.95,16.34L10,14.91V9A2,2 0 0,1 8,7V4A2,2 0 0,1 10,2H17M10,4V7H17V4H10Z"/>
+                    <TextBlock Text="Stock Management" Margin="10,0,10,7" VerticalAlignment="Bottom" FontSize="15" FontWeight="Bold" Foreground="#2a84f1"></TextBlock>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
@@ -58,7 +58,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="0" VerticalAlignment="Bottom">
-                    <TextBlock Text="Cartegories" Margin="30,10,10,10" FontFamily="Bahnschrift" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Stock" Margin="30,10,10,10" FontFamily="Bahnschrift" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
                 </StackPanel>
 
                 <Button Grid.Column="1" Background="#2a84f1" Height="30" Width="50" Click="Button_Click">
@@ -68,21 +68,22 @@
                         </Style>
                     </Button.Resources>
                     <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                        <TextBlock Text="-/+" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="white" FontSize="15" FontWeight="Bold"/>
-                        <Path Stretch="Uniform" Margin="2,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Fill="white" Data="M11,13.5V21.5H3V13.5H11M12,2L17.5,11H6.5L12,2M17.5,13C20,13 22,15 22,17.5C22,20 20,22 17.5,22C15,22 13,20 13,17.5C13,15 15,13 17.5,13Z"/>
+                        <TextBlock Text="-/" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="white" FontSize="15" FontWeight="Bold"/>
+                        <Path Stretch="Uniform" Margin="2,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Fill="white" Data="M17,2A2,2 0 0,1 19,4V7A2,2 0 0,1 17,9V17C17,17.85 16.5,18.57 15.74,18.86L9.5,21.77C8.5,22.24 7.29,21.81 6.83,20.81L6,19C5.5,18 5.95,16.8 6.95,16.34L10,14.91V9A2,2 0 0,1 8,7V4A2,2 0 0,1 10,2H17M10,4V7H17V4H10Z"/>
 
                     </StackPanel>
                 </Button>
             </Grid>
         </Border>
         <DataGrid RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding userdataCollection}"
-                 
+                  
                   x:Name="UserDataGrid"
                   AutoGenerateColumns="False"
                   Margin="10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Width="10"/>
-                <DataGridTextColumn Header="Cartegory" Width="150"/>
+                <DataGridTextColumn Header="Category" Width="150"/>
+                <DataGridTextColumn Header="Quantity" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

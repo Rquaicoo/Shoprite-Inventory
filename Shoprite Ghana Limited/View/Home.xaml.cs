@@ -36,5 +36,10 @@ namespace Shoprite_Ghana_Limited.View
         {
 
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

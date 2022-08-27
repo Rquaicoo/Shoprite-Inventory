@@ -12,17 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Shoprite_Ghana_Limited.View.StockManagement;
 
 namespace Shoprite_Ghana_Limited.View.Pages
 {
     /// <summary>
-    /// Interaction logic for AddUser.xaml
+    /// Interaction logic for Stock.xaml
     /// </summary>
-    public partial class AddUser : Page
+    public partial class Stock : Page
     {
-        public AddUser()
+        public Stock()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ManageStock manageStock = new ManageStock();
+            manageStock.Show();
         }
     }
 }

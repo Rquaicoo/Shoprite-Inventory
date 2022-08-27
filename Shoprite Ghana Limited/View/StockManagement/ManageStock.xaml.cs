@@ -10,19 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Shoprite_Ghana_Limited.View.Pages
+namespace Shoprite_Ghana_Limited.View.StockManagement
 {
     /// <summary>
-    /// Interaction logic for EditUser.xaml
+    /// Interaction logic for ManageStock.xaml
     /// </summary>
-    public partial class EditUser : Page
+    public partial class ManageStock : Window
     {
-        public EditUser()
+        public ManageStock()
         {
             InitializeComponent();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

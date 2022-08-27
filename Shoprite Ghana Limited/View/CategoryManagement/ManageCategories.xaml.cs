@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Shoprite_Ghana_Limited.View.CategoryManagement;
 
-namespace Shoprite_Ghana_Limited.View.Pages
+namespace Shoprite_Ghana_Limited.View.CategoryManagement
 {
     /// <summary>
-    /// Interaction logic for Categories.xaml
+    /// Interaction logic for ManageCategories.xaml
     /// </summary>
-    public partial class Categories : Page
+    public partial class ManageCategories : Window
     {
-        public Categories()
+        public ManageCategories()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ManageCategories manageCategories = new ManageCategories();
-            manageCategories.Show();
-
         }
     }
 }
