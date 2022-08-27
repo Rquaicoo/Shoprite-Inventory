@@ -34,7 +34,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="29,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF3769CC" Foreground="White">
+        <Button Content="Add" HorizontalAlignment="Left" Margin="29,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF3769CC" Foreground="White" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -42,6 +42,6 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <ComboBox HorizontalAlignment="Left" Margin="249,60,0,0" VerticalAlignment="Top" Width="94" Height="27" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="249,60,0,0" VerticalAlignment="Top" Width="94" Height="27" SelectionChanged="ComboBox_SelectionChanged"/>
     </Grid>
 </Window>

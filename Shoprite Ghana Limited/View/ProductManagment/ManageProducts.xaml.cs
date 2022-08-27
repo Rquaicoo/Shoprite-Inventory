@@ -23,40 +23,46 @@ namespace Shoprite_Ghana_Limited.View.ProductManagment
     
     public partial class ManageProducts : Window
     {
+        private int cartegoryId;
 
         SqlConnection connection = new SqlConnection();
         public ManageProducts()
         {
             InitializeComponent();
+            loadComboBox();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string query = "SELECT * FROM categories;";
-
-            MySqlCommand cmd = new MySqlCommand(query, connection.get_connection());
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while(reader.Read())
-            {
-                comboBox.Items.Add(reader.GetString(0));
-            }
+            this.cartegoryId = comboBox.SelectedIndex;
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+           
+        }
+
+        private void loadComboBox()
+        {
             string query = "SELECT * FROM categories;";
 
+            connection.openConnection();
             MySqlCommand cmd = new MySqlCommand(query, connection.get_connection());
 
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                comboBox.Items.Add(reader.GetString("name"));
+                MySqlDataReader reader = cmd.ExecuteReader();
+                MessageBox.Show("done");
+                while (reader.Read())
+                {
+                    comboBox.Items.Add(reader["id"].ToString() + "-" + reader["name"].ToString());
+                }
+            }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
             }
         }
     }
