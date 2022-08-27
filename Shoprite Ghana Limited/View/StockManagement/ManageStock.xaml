@@ -10,7 +10,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="29,32,0,0" TextWrapping="Wrap" Text="Enter stock quantity:" FontSize="12" VerticalAlignment="Top" Width="172" Height="20" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="249,36,0,0" TextWrapping="Wrap" Text="Select category:" FontSize="12" VerticalAlignment="Top" FontWeight="Bold"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="29,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Height="33" BorderBrush="Black" VerticalContentAlignment="Center">
+        <TextBox Name="quantity" HorizontalAlignment="Left" Margin="29,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Height="33" BorderBrush="Black" VerticalContentAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -18,7 +18,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Button Content="Delete" HorizontalAlignment="Center" Margin="0,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="red" Foreground="White">
+        <Button Click="remove" Content="Delete" HorizontalAlignment="Center" Margin="0,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="red" Foreground="White">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -26,7 +26,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="167,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="green" Foreground="White">
+        <Button Content="Update" HorizontalAlignment="Left" Margin="167,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="green" Foreground="White" Click="edit">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -34,7 +34,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="29,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF3769CC" Foreground="White">
+        <Button Content="Add" HorizontalAlignment="Left" Margin="29,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF3769CC" Foreground="White" Click="add">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -42,6 +42,6 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <ComboBox HorizontalAlignment="Left" Margin="249,60,0,0" VerticalAlignment="Top" Width="94" Height="27" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="249,60,0,0" VerticalAlignment="Top" Width="94" Height="27" SelectionChanged="ComboBox_SelectionChanged"/>
     </Grid>
 </Window>

@@ -10,7 +10,7 @@
     <Grid Width="700" Height="300">
         <TextBlock HorizontalAlignment="Left" Margin="29,77,0,0" TextWrapping="Wrap" Text="Enter category name:" FontSize="15" VerticalAlignment="Top" Width="171" Height="25" FontWeight="Bold"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="29,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" Height="43" BorderBrush="Black" VerticalContentAlignment="Center">
+        <TextBox Name="name" HorizontalAlignment="Left" Margin="29,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" Height="43" BorderBrush="Black" VerticalContentAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -18,7 +18,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="544,240,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="red" Foreground="White">
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="544,240,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="red" Foreground="White" Click="Delete">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -26,7 +26,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="405,240,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="green" Foreground="White">
+        <Button Content="Update" HorizontalAlignment="Left" Margin="405,240,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="green" Foreground="White" Click="Edit">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -34,7 +34,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="260,240,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF3769CC" Foreground="White">
+        <Button Content="Add" HorizontalAlignment="Left" Margin="260,240,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF3769CC" Foreground="White" Click="Add">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>

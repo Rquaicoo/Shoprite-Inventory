@@ -62,12 +62,7 @@ namespace Shoprite_Ghana_Limited.ViewModel
                 }
                 catch (MySqlException e)
                 {
-                    switch (e.Number)
-                    {
-                        case 1062:
-                            MessageBox.Show("Category already exists");
-                            break;
-                    }
+                    MessageBox.Show("" + e);
                     return false;
                 }
             }
@@ -88,12 +83,7 @@ namespace Shoprite_Ghana_Limited.ViewModel
                 }
                 catch (MySqlException e)
                 {
-                    switch (e.Number)
-                    {
-                        case 1062:
-                            MessageBox.Show("An error occured");
-                            break;
-                    }
+                    MessageBox.Show("" + e);
                     return false;
                 }
             }
@@ -113,12 +103,7 @@ namespace Shoprite_Ghana_Limited.ViewModel
                 }
                 catch (MySqlException e)
                 {
-                    switch (e.Number)
-                    {
-                        case 1062:
-                            MessageBox.Show("An error occured");
-                            break;
-                    }
+                    MessageBox.Show("" + e);
                     return false;
                 }
             }

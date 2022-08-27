@@ -61,7 +61,7 @@ namespace Shoprite_Ghana_Limited.ViewModel
         internal bool createProduct()
         {
 
-            sql = "INSERT INTO products (name, price, reorderLevel, categoryId) VALUES (" + "'" + name + "'" + "," +  + price + ","  + reorderLevel  + "," + categoryId + "," + ");";
+            sql = "INSERT INTO products (name, price, reorderLevel, categoryId) VALUES (" + "'" + name + "'" + "," + price + ","  + reorderLevel  + "," + categoryId + ");";
             if (conn.openConnection() == true)
             {
                 try
@@ -72,12 +72,8 @@ namespace Shoprite_Ghana_Limited.ViewModel
                 }
                 catch (MySqlException e)
                 {
-                    switch (e.Number)
-                    {
-                        case 1062:
-                            MessageBox.Show("Product already exists");
-                            break;
-                    }
+
+                    MessageBox.Show("" + e);
                     return false;
                 }
             }
@@ -98,19 +94,14 @@ namespace Shoprite_Ghana_Limited.ViewModel
                 }
                 catch (MySqlException e)
                 {
-                    switch (e.Number)
-                    {
-                        case 1062:
-                            MessageBox.Show("An error occured");
-                            break;
-                    }
+                    MessageBox.Show("" + e);
                     return false;
                 }
             }
             return true;
         }
 
-        internal bool deleteUser()
+        internal bool deleteProduct()
         {
             sql = "DELETE FROM products WHERE name = '" + name + "';";
             if (conn.openConnection() == true)
@@ -123,12 +114,7 @@ namespace Shoprite_Ghana_Limited.ViewModel
                 }
                 catch (MySqlException e)
                 {
-                    switch (e.Number)
-                    {
-                        case 1062:
-                            MessageBox.Show("An error occured");
-                            break;
-                    }
+                    MessageBox.Show("" + e);
                     return false;
                 }
             }

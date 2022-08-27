@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 using Shoprite_Ghana_Limited.View;
 using Shoprite_Ghana_Limited.View.UserManagement;
 
@@ -26,6 +28,7 @@ namespace Shoprite_Ghana_Limited.View.Pages
         public Users()
         {
             InitializeComponent();
+            BindData();
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -35,6 +38,23 @@ namespace Shoprite_Ghana_Limited.View.Pages
 
         private void BindData()
         {
+            //fetch data from database
+            string sql = "SELECT * FROM users;";
+            connection.openConnection();
+
+            try
+            {
+                MySqlDataAdapter cmd = new MySqlDataAdapter(sql, connection.get_connection());
+                DataSet ds = new DataSet();
+                cmd.Fill(ds, "UserDataBinding");
+                UserDataGrid.DataContext = ds;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+
 
         }
 
