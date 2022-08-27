@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Shoprite_Ghana_Limited.View.CategoryManagement;
 
 namespace Shoprite_Ghana_Limited.View.Pages
 {
@@ -23,6 +24,13 @@ namespace Shoprite_Ghana_Limited.View.Pages
         public Categories()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ManageCategories manageCategories = new ManageCategories();
+            manageCategories.Show();
+
         }
     }
 }
