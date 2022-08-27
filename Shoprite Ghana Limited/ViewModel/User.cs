@@ -21,13 +21,13 @@ namespace Shoprite_Ghana_Limited.ViewModel
         private MySqlCommand cmd;
         SqlConnection conn = new SqlConnection();
 
-        public User()
+        public User(string username, string email, string fullname, string password, string role)
         {
-            username = "";
-            email = "";
-            password = "";
-            fullname = "";
-            role = "";
+            this.username = username;
+            this.email = email;
+            this.password = password;
+            this.fullname = fullname;
+            this.role = role;
         }
 
         private bool getUsers()
@@ -56,7 +56,7 @@ namespace Shoprite_Ghana_Limited.ViewModel
             return true;
         }
 
-        private bool createUser()
+        internal bool createUser()
         {
             
                 sql = "INSERT INTO users (username, email, password, fullname, role) VALUES (" + "'" + username + "'" + "," + "'" + email + "'" + "," + "'" + password + "'" + "," + "'" + fullname + "'" + "," + "'" + role + "'" + ");";
@@ -82,7 +82,7 @@ namespace Shoprite_Ghana_Limited.ViewModel
             return true;
         }
         
-        private bool editUser()
+        internal bool editUser()
         {
 
             sql = "UPDATE users SET username = " + "'" + username + "'" + "," + "email = " + "'" + email + "'" + "," + "password = " + "'" + password + "'" + "," + "fullname = " + "'" + fullname + "'" + "," + "role = " + "'" + role + "'" + " WHERE username = " + "'" + username + "'" + ";";
@@ -108,9 +108,9 @@ namespace Shoprite_Ghana_Limited.ViewModel
             return true;
         }
 
-        private bool deleteUser()
+        internal bool deleteUser()
         {
-            sql = "DELETE FROM users WHERE id = " + id + ";";
+            sql = "DELETE FROM users WHERE username = '" + username + "';";
             if (conn.openConnection() == true)
             {
                 try
