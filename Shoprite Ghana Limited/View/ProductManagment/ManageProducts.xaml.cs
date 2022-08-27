@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using Shoprite_Ghana_Limited.View;
+using Shoprite_Ghana_Limited.ViewModel;
 
 namespace Shoprite_Ghana_Limited.View.ProductManagment
 {
@@ -34,13 +35,30 @@ namespace Shoprite_Ghana_Limited.View.ProductManagment
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.cartegoryId = comboBox.SelectedIndex;
+            this.cartegoryId = comboBox.SelectedIndex + 1;
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
-           
+            Product product = new Product(name.Text, Convert.ToDouble(price.Text),Convert.ToInt32(reorderLevel.Text), this.cartegoryId, "");
+
+            try
+            {
+                bool status = product.createProduct();
+                if (status)
+                {
+                    MessageBox.Show("Product sucessfully added");
+                }
+                else
+                {
+                    MessageBox.Show("Something happened");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
         }
 
         private void loadComboBox()
@@ -60,6 +78,51 @@ namespace Shoprite_Ghana_Limited.View.ProductManagment
                 }
             }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+        }
+
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Product product = new Product(name.Text, Convert.ToDouble(price.Text), Convert.ToInt32(reorderLevel.Text), this.cartegoryId, "");
+
+            try
+            {
+                bool status = product.editProduct();
+                if (status)
+                {
+                    MessageBox.Show("Product sucessfully added");
+                }
+                else
+                {
+                    MessageBox.Show("Something happened");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+
+        }
+
+        private void Remove_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Product product = new Product(name.Text, Convert.ToDouble(price.Text), Convert.ToInt32(reorderLevel.Text), this.cartegoryId, "");
+
+            try
+            {
+                bool status = product.deleteProduct();
+                if (status)
+                {
+                    MessageBox.Show("Product sucessfully added");
+                }
+                else
+                {
+                    MessageBox.Show("Something happened");
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("" + ex);

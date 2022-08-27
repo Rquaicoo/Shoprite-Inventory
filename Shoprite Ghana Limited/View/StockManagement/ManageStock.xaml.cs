@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Shoprite_Ghana_Limited.View;
+using Shoprite_Ghana_Limited.ViewModel;
+using System.Xml.Linq;
 
 namespace Shoprite_Ghana_Limited.View.StockManagement
 {
@@ -32,11 +34,24 @@ namespace Shoprite_Ghana_Limited.View.StockManagement
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.categoryId = comboBox.SelectedIndex;
+            this.categoryId = comboBox.SelectedIndex + 1;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void add(object sender, RoutedEventArgs e)
         {
+            connection.openConnection();
+
+            Stock stock = new Stock(Convert.ToInt32(quantity.Text), categoryId);
+
+            bool status = stock.createStock();
+            if (status)
+            {
+                MessageBox.Show("Stock successfully added");
+            }
+            else
+            {
+                MessageBox.Show("Something happened");
+            }
 
         }
 
@@ -60,6 +75,40 @@ namespace Shoprite_Ghana_Limited.View.StockManagement
             catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
+            }
+        }
+
+        private void edit(object sender, RoutedEventArgs e)
+        {
+            connection.openConnection();
+
+            Stock stock = new Stock(Convert.ToInt32(quantity.Text), categoryId);
+
+            bool status = stock.editStock();
+            if (status)
+            {
+                MessageBox.Show("Stock successfully modified");
+            }
+            else
+            {
+                MessageBox.Show("Something happened");
+            }
+        }
+
+        private void remove(object sender, RoutedEventArgs e)
+        {
+            connection.openConnection();
+
+            Stock stock = new Stock(Convert.ToInt32(quantity.Text), categoryId);
+
+            bool status = stock.deleteStock();
+            if (status)
+            {
+                MessageBox.Show("Stock successfully deleted");
+            }
+            else
+            {
+                MessageBox.Show("Something happened");
             }
         }
     }
