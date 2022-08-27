@@ -17,7 +17,16 @@
                         Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <Path x:Name="icon" Height="18" Width="18" Stretch="Uniform" Fill="#7b8792" Data="{TemplateBinding Icon}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path Grid.Column="0" x:Name="icon" Height="18" Width="18" Stretch="Uniform" Fill="#7b8792" Data="{TemplateBinding Icon}"/>
+                            <TextBlock Grid.Column="1" x:Name="text" TextAlignment="Center" TextWrapping="Wrap" Text="{TemplateBinding Text}" VerticalAlignment="Center" Margin="10,2,0,0" FontSize="12" FontWeight="Bold" Foreground="#2a84f1"/>
+                        </Grid>
                     </Border>
                     
 
@@ -25,12 +34,11 @@
 
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" TargetName="background" Value="#d0ebff" />
-                            <Setter Property="Fill" TargetName="icon" Value="#2a84f1" />
+                           
                         </Trigger>
 
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" TargetName="background" Value="#d0ebff" />
-                            <Setter Property="Fill" TargetName="icon" Value="#2a84f1" />
+                            <Setter Property="Background" TargetName="background" Value="#ffffff" />
                         </Trigger>
 
                     </ControlTemplate.Triggers>
