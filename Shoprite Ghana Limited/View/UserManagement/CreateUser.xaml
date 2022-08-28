@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="CreateUser" Height="450" Width="700">
-    <Grid Width="700" Height="450">
-        <TextBlock HorizontalAlignment="Left" Margin="29,25,0,0" TextWrapping="Wrap" Text="Enter username:" FontSize="12" VerticalAlignment="Top" Width="134" Height="24" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="350,29,0,0" TextWrapping="Wrap" Text="Full name:" FontSize="12" VerticalAlignment="Top" FontWeight="Bold"/>
+    <Grid Width="700" Height="450" Background="White">
+        <TextBlock HorizontalAlignment="Left" Margin="29,25,0,0" TextWrapping="Wrap" Text="Enter username:" FontSize="12" VerticalAlignment="Top" Width="134" Height="24" FontWeight="Bold" Foreground="#FF1D92FF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,29,0,0" TextWrapping="Wrap" Text="Full name:" FontSize="12" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF1D92FF"/>
 
         <TextBox HorizontalAlignment="Left" Margin="29,43,0,0" TextWrapping="Wrap" Name="username" VerticalAlignment="Top" Width="233" Height="43" BorderBrush="Black" VerticalContentAlignment="Center">
             <TextBox.Resources>
@@ -29,7 +29,7 @@
             </TextBox.Resources>
         </TextBox>
 
-        <TextBlock HorizontalAlignment="Left" Margin="29,112,0,0" TextWrapping="Wrap" Text="Email:" FontSize="12" VerticalAlignment="Top" Width="96" Foreground="Black" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,112,0,0" TextWrapping="Wrap" Text="Email:" FontSize="12" VerticalAlignment="Top" Width="96" Foreground="#FF1D92FF" FontWeight="Bold"/>
 
         <TextBox HorizontalAlignment="Left" Margin="29,129,0,0" Name="email" TextWrapping="Wrap"  VerticalAlignment="Top" Width="233" Height="45" TextChanged="TextBox_TextChanged" BorderBrush="Black" VerticalContentAlignment="Center">
             <TextBox.Resources>
@@ -41,7 +41,7 @@
         </TextBox>
 
 
-        <TextBlock HorizontalAlignment="Left" Margin="29,191,0,0" TextWrapping="Wrap" Text="Password:" FontSize="12" VerticalAlignment="Top" Width="96" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,191,0,0" TextWrapping="Wrap" Text="Password:" FontSize="12" VerticalAlignment="Top" Width="96" FontWeight="Bold" Foreground="#FF1D92FF"/>
         <TextBox HorizontalAlignment="Left" Margin="29,212,0,0" Name="password" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" Height="48" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" BorderBrush="Black">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -50,8 +50,8 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBlock HorizontalAlignment="Left" Margin="379,116,0,0" TextWrapping="Wrap" Text="Role:" FontSize="12" VerticalAlignment="Top" Width="96" FontWeight="Bold"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="527,343,0,0" VerticalAlignment="Top" Height="35" Width="90" Click="Delete_Button_Click" Background="red" Foreground="White">
+        <TextBlock HorizontalAlignment="Left" Margin="379,116,0,0" TextWrapping="Wrap" Text="Role:" FontSize="12" VerticalAlignment="Top" Width="96" FontWeight="Bold" Foreground="#FF1D92FF"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="316,343,0,0" VerticalAlignment="Top" Height="35" Width="90" Click="Delete_Button_Click" Background="#FF384869" Foreground="White">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -61,7 +61,7 @@
         </Button>
         <RadioButton Content="Admin" HorizontalAlignment="Left" Margin="379,141,0,0" Name="admin" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
         <RadioButton Content="Attendant" HorizontalAlignment="Left" Margin="472,144,0,0" Name="attendant" VerticalAlignment="Top" Checked="attendant_Checked"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="406,343,0,0" VerticalAlignment="Top" Height="35" Width="90" Click="Update_Button_Click" Background="green" Foreground="White">
+        <Button Content="Update" HorizontalAlignment="Left" Margin="172,343,0,0" VerticalAlignment="Top" Height="35" Width="90" Click="Update_Button_Click" Background="#FF1FAB82" Foreground="White">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -69,7 +69,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="281,343,0,0" VerticalAlignment="Top" Height="35" Width="90" Click="Add_Button_Click" Background="#FF3769CC" Foreground="White">
+        <Button Content="Add" HorizontalAlignment="Left" Margin="29,343,0,0" VerticalAlignment="Top" Height="35" Width="90" Click="Add_Button_Click" Background="#FF3769CC" Foreground="White">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
