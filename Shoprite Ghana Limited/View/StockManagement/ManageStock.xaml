@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shoprite_Ghana_Limited.View.StockManagement"
         mc:Ignorable="d"
-        Title="ManageStock" Height="300" Width="500">
+        Title="ManageStock" Height="300" Width="350">
+
     <Grid Width="700" Height="450">
-        <TextBlock HorizontalAlignment="Left" Margin="29,32,0,0" TextWrapping="Wrap" Text="Enter stock quantity:" FontSize="12" VerticalAlignment="Top" Width="172" Height="20" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="249,36,0,0" TextWrapping="Wrap" Text="Select category:" FontSize="12" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,32,0,0" TextWrapping="Wrap" Text="Enter stock quantity:" FontSize="12" VerticalAlignment="Top" Width="172" Height="20" FontWeight="Bold" Foreground="#FF1D92FF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="206,36,0,0" TextWrapping="Wrap" Text="Select category:" FontSize="12" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF1D92FF"/>
 
         <TextBox Name="quantity" HorizontalAlignment="Left" Margin="29,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Height="33" BorderBrush="Black" VerticalContentAlignment="Center">
             <TextBox.Resources>
@@ -18,7 +19,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Button Click="remove" Content="Delete" HorizontalAlignment="Center" Margin="0,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="red" Foreground="White">
+        <Button Click="remove" Content="Delete" HorizontalAlignment="Left" Margin="216,136,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF384869" Foreground="White">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -26,7 +27,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="167,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="green" Foreground="White" Click="edit">
+        <Button Content="Update" HorizontalAlignment="Left" Margin="115,136,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF1FAB82" Foreground="White" Click="edit">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -34,7 +35,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="29,123,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF3769CC" Foreground="White" Click="add">
+        <Button Content="Add" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Height="35" Width="90" Background="#FF3769CC" Foreground="White" Click="add">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -42,6 +43,13 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="249,60,0,0" VerticalAlignment="Top" Width="94" Height="27" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="206,57,0,0" VerticalAlignment="Top" Width="90" Height="30" SelectionChanged="ComboBox_SelectionChanged" BorderBrush="#FF100909">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
     </Grid>
 </Window>
