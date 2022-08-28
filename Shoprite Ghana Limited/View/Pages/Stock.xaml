@@ -75,15 +75,13 @@
                 </Button>
             </Grid>
         </Border>
-        <DataGrid RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding userdataCollection}"
-                  
-                  x:Name="UserDataGrid"
+        <DataGrid RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" Name="StockDataGrid" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding Path=StockDataBinding}"
                   AutoGenerateColumns="False"
-                  Margin="10">
+                  Margin="10" SelectionChanged="UserDataGrid_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="10"/>
-                <DataGridTextColumn Header="Category" Width="150"/>
-                <DataGridTextColumn Header="Quantity" Width="150"/>
+                <DataGridTextColumn Header="Id" Width="10" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="Category" Width="150" Binding="{Binding Path=categoryId}"/>
+                <DataGridTextColumn Header="Quantity" Width="150" Binding="{Binding Path=quantity}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
