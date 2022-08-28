@@ -62,9 +62,12 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\Category.cs" />
     <Compile Include="ViewModel\Product.cs" />
+    <Compile Include="ViewModel\Sales.cs" />
     <Compile Include="ViewModel\Stock.cs" />
-    <Compile Include="ViewModel\Till.cs" />
     <Compile Include="ViewModel\User.cs" />
+    <Compile Include="View\AttendantDashboard.xaml.cs">
+      <DependentUpon>AttendantDashboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CategoryManagement\ManageCategories.xaml.cs">
       <DependentUpon>ManageCategories.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,12 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NavigationButton.cs" />
+    <Compile Include="View\Pages\Attendant\Sale.xaml.cs">
+      <DependentUpon>Sale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Attendant\Till.xaml.cs">
+      <DependentUpon>Till.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\Categories.xaml.cs">
       <DependentUpon>Categories.xaml</DependentUpon>
     </Compile>
@@ -113,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\AttendantDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CategoryManagement\ManageCategories.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +135,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Attendant\Sale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Attendant\Till.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

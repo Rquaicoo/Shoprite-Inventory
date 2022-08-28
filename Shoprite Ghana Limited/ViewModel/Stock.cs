@@ -65,12 +65,7 @@ namespace Shoprite_Ghana_Limited.ViewModel
                 }
                 catch (MySqlException e)
                 {
-                    switch (e.Number)
-                    {
-                        case 1062:
-                            MessageBox.Show("Stock already exists");
-                            break;
-                    }
+                    MessageBox.Show("" + e);
                     return false;
                 }
             }

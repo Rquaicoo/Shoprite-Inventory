@@ -46,7 +46,7 @@ namespace Shoprite_Ghana_Limited.View
 
             else
             {
-                sql = "SELECT username, email FROM users WHERE username=" + "'" + usernameValue + "'" + " AND password=" + "'" + passwordValue + "';";
+                sql = "SELECT username, email, role FROM users WHERE username=" + "'" + usernameValue + "'" + " AND password=" + "'" + passwordValue + "';";
                 if (conn.openConnection() ==true)
                 {
                     try
@@ -61,11 +61,28 @@ namespace Shoprite_Ghana_Limited.View
 
                         else
                         {
-                            //hide current window and open home.xaml
+                            AttendantDashboard user = new AttendantDashboard();
+                            Home admin = new Home();
 
-                            Home home = new Home();
-                            home.Show();
-                            this.Close();
+                            MySqlDataReader reader = cmd.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                string role = reader["role"].ToString();
+                                if (role == "admin")
+                                {                                    
+                                    admin.Show();
+                                    this.Close();
+                                }
+                                
+                                else
+                                {
+                                    user.Show();
+                                    this.Close();
+                                }
+                            }
+                            
+
+                            
                         }
                     }
 
