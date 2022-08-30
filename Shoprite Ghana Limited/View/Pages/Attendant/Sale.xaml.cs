@@ -28,6 +28,7 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
         private int till;
 
         private Sales[] sales = new Sales[10];
+        private double[] prices = new double[100];
         private int index = 0;
 
         public Sale()
@@ -106,18 +107,16 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
 
         private void Calculate_Click_1(object sender, RoutedEventArgs e)
         {
-            try
-            {
+         
                 connection.openConnection();
                 string sql = "SELECT price FROM products WHERE id=" + comboBox.SelectedIndex+1 + ";";
 
                 cmd = new MySqlCommand(sql, connection.get_connection());
-                MessageBox.Show("" + comboBox.SelectedIndex);
 
                 try
                 {
                     MySqlDataReader reader = cmd.ExecuteReader();
-                    MessageBox.Show("done");
+                 
 
                     while (reader.Read())
                     {
@@ -126,22 +125,19 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
                         int number = Convert.ToInt32(quantity.Text);
                         double discountGiven = Convert.ToDouble(discount.Text);
 
+                        MessageBox.Show("" + reader["price"].ToString());
 
                         total.Text = (price * number - ( discountGiven * (price * number))).ToString();
                     }
                     
                 }
-                catch (Exception ex)
+                
+            catch (Exception ex)
                 {
                     MessageBox.Show("" + ex);
                 }
                 connection.closeConnection();
-            }
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -177,36 +173,45 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
             double discountValue = Convert.ToDouble(discount.Text);
             int attendantId = 2;
 
-            Sales addSale = new Sales(amount, ItemQuantity, productId, attendantId, discountValue, this.till);
-            sales[index] = addSale;
-            this.index += 1;
+            //amount, ItemQuantity, productId, attendantId, discountValue, this.till
+            sales[index] = new Sales();
+            sales[index].amount = amount;
+            this.sales[index].quantity = ItemQuantity;
+            this.sales[index].productId = productId;
+            this.sales[index].attendantId = attendantId;
+            this.sales[index].discount = discountValue;
+            this.sales[index].tillId = this.till;
+            MessageBox.Show("" + sales[index].amount);
+
+            this.index ++;
+           
 
             comboBox.SelectedIndex = -1;
             quantity.Text = "0";
             total.Text = "0.00";
             discount.Text = "0.00";
 
+            MessageBox.Show("Item added");
         }
-
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             connection.openConnection();
-            foreach (Sales item in sales)
+            for (int i=0; i<index; i++)
             {
-                string statement = $"INSERT INTO sales (productId, quantity, amount, discount, tillId, attendantId) VALUES ({item.productId}, {item.quantity}, {item.amount}, {item.discount}, {item.tillId}, {item.attendantId});";
-
                 try
                 {
-                    cmd = new MySqlCommand(statement, connection.get_connection());
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    reader.Close();
-                    
+                    string statement = $"INSERT INTO sales (productId, quantity, amount, discount, tillId, attendantId) VALUES (" + sales[i].productId + "," + sales[i].quantity + "," + sales[i].amount + "," + sales[i].discount + "," + sales[i].tillId + "," + sales[i].attendantId + ");";
+
                 }
+
                 catch (Exception ex)
                 {
                     MessageBox.Show("" + ex);
-                   
+                    MessageBox.Show("" + sales[i].productId + "," + sales[i].quantity + "," + sales[i].amount + "," + sales[i].discount + "," + sales[i].tillId + "," + sales[i].attendantId);
+                    break;
                 }
+                
             }
 
             MessageBox.Show("Click OK to print reciept");
