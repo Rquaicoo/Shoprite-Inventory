@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shoprite_Ghana_Limited.View"
         mc:Ignorable="d"
-        Title="AttendantDashboard" Height="600" Width="1000">
+        Title="AttendantDashboard" Height="600" Width="1000"
+        ResizeMode="NoResize"
+        Icon="\Images\shoprite-logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -18,11 +20,11 @@
 
         <ListBox Grid.Column="0" SelectionMode="Single" SelectionChanged="sidebar_SelectionChanged" x:Name="sidebar" Margin="0,50,0,50" BorderThickness="0">
 
-            <local:NavigationButton Text="Till" Navlink="/View/Pages/Users.xaml" Margin="5,20,5,5" Padding="6" Icon="M21.7,13.35L20.7,14.35L18.65,12.3L19.65,11.3C19.86,11.09 20.21,11.09 20.42,11.3L21.7,12.58C21.91,12.79 21.91,13.14 21.7,13.35M12,18.94L18.06,12.88L20.11,14.93L14.06,21H12V18.94M12,14C7.58,14 4,15.79 4,18V20H10V18.11L14,14.11C13.34,14.03 12.67,14 12,14M12,4A4,4 0 0,0 8,8A4,4 0 0,0 12,12A4,4 0 0,0 16,8A4,4 0 0,0 12,4Z"/>
+            <local:NavigationButton Text="Till" Navlink="/View/Pages/Users.xaml" Margin="5,20,5,5" Padding="6" Icon="M2,17H22V21H2V17M6.25,7H9V6H6V3H14V6H11V7H17.8C18.8,7 19.8,8 20,9L20.5,16H3.5L4.05,9C4.05,8 5.05,7 6.25,7M13,9V11H18V9H13M6,9V10H8V9H6M9,9V10H11V9H9M6,11V12H8V11H6M9,11V12H11V11H9M6,13V14H8V13H6M9,13V14H11V13H9M7,4V5H13V4H7Z" />
 
-            <local:NavigationButton Text="Sale" Navlink="/View/Pages/Attendant/Sale.xaml" Margin="5,20,5,5" Padding="6" Icon="M11,13.5V21.5H3V13.5H11M12,2L17.5,11H6.5L12,2M17.5,13C20,13 22,15 22,17.5C22,20 20,22 17.5,22C15,22 13,20 13,17.5C13,15 15,13 17.5,13Z"/>
+            <local:NavigationButton Text="Sale" Navlink="/View/Pages/Attendant/Sale.xaml" Margin="5,20,5,5" Padding="6" Icon="M20,5C19.4,5 19,5.5 19,6.1V16C19,16.6 19.4,17 20,17.1C20.6,17.1 21,16.6 21,16V6.1C21,5.5 20.6,5 20,5M16.4,2H4.6C3.7,2 3,2.7 3,3.6V17.4C3,18.3 3.7,19 4.6,19H6V21C6,21.6 6.4,22 7,22H13C13.6,22 14,21.6 14,21V19H16.4C17.3,19 18,18.3 18,17.4V3.6C18,2.7 17.3,2 16.4,2M5,8H8V10H5V8M12,11V13H9V11H12M9,10V8H12V10H9M12,14V16H9V14H12M5,11H8V13H5V11M5,16V14H8V16H5M8,21H7V19H8V21M13,21H10V19H13V21M16,16H13V14H16V16M16,13H13V11H16V13M16,10H13V8H16V10M16,6H5V4H16V6Z"/>
 
-            <local:NavigationButton Text="Daily Report" Navlink="/View/Pages/Stock.xaml" Margin="5,20,5,5" Padding="6" Icon="M17,2A2,2 0 0,1 19,4V7A2,2 0 0,1 17,9V17C17,17.85 16.5,18.57 15.74,18.86L9.5,21.77C8.5,22.24 7.29,21.81 6.83,20.81L6,19C5.5,18 5.95,16.8 6.95,16.34L10,14.91V9A2,2 0 0,1 8,7V4A2,2 0 0,1 10,2H17M10,4V7H17V4H10Z"/>
+            <local:NavigationButton Text="Daily Report" Navlink="/View/Pages/Stock.xaml" Margin="5,20,5,5" Padding="6" Icon="M17.45,15.18L22,7.31V19L22,21H2V3H4V15.54L9.5,6L16,9.78L20.24,2.45L21.97,3.45L16.74,12.5L10.23,8.75L4.31,19H6.57L10.96,11.44L17.45,15.18Z"/>
         </ListBox>
 
         <Frame Grid.Column="1" x:Name="navigationFrame" Background="#e9ecef" NavigationUIVisibility="Hidden" Navigated="navigationFrame_Navigated"/>
