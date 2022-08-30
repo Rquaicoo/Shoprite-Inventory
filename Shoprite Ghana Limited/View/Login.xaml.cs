@@ -46,7 +46,7 @@ namespace Shoprite_Ghana_Limited.View
 
             else
             {
-                sql = "SELECT username, email, role FROM users WHERE username=" + "'" + usernameValue + "'" + " AND password=" + "'" + passwordValue + "';";
+                sql = "SELECT username, email, role FROM users WHERE username=" + "'" + usernameValue + "'" + " AND password=" + "MD5(" + passwordValue + ");";
                 if (conn.openConnection() ==true)
                 {
                     try
