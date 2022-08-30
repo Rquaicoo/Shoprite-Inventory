@@ -22,14 +22,9 @@ namespace Shoprite_Ghana_Limited.ViewModel
         public MySqlCommand cmd;
 
         
-        public Sales(double amount, int quantity, int productId, int attendantId, double discount, int tillId)
+        public Sales()
         {
-            this.quantity = quantity;
-            this.amount = amount;
-            this.productId = productId;
-            this.attendantId = attendantId;
-            this.discount = discount;
-            this.tillId = tillId;
+          ;
         }
 
         internal bool createSale(Sales[] items)
