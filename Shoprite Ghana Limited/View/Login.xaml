@@ -33,16 +33,20 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" Background="white" CornerRadius="0,20,20,0">
-                <Grid Height="500" VerticalAlignment="Top" Margin="30, 180, 30, 40">
+                <Grid Height="500" VerticalAlignment="Top" Margin="30, 120, 30, 40">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
-
                     <StackPanel Grid.Row="0">
+                        <Image Source="\Images\logo-red.png" Height="100"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1">
                         <TextBlock FontSize="26" Margin="50,0,0,0" TextAlignment="Center">
                             <TextBlock.Text>Welcome Back</TextBlock.Text>
                         </TextBlock>
@@ -51,7 +55,7 @@
                         </TextBlock>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="1">
+                    <StackPanel Grid.Row="2">
                         <TextBlock Text="Enter your username" Margin="50,0,50,10" />
                         <TextBox Width="350" Height="50" TextChanged="TextBox_TextChanged" TextAlignment="Left" Padding="0,15,0,0" Name="username" BorderBrush="Black">
                             <TextBox.Resources>
@@ -63,14 +67,14 @@
                         </TextBox>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="2">
+                    <StackPanel Grid.Row="3">
                         <TextBlock Text="Enter your password" Margin="50,0,50,10" />
                         <PasswordBox Width="350" Height="50" Padding="0,15,0,0" Name="password" >
                             
                         </PasswordBox>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="3" Width="150" Height="40">
+                    <StackPanel Grid.Row="4" Width="150" Height="40">
                         <Button Height="40" Background="DodgerBlue" Click="submitClick">
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
@@ -81,7 +85,7 @@
                         </Button>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="4">
+                    <StackPanel Grid.Row="5">
                         <TextBlock HorizontalAlignment="Right">
                             <TextBlock.Text>Forgotten Password?</TextBlock.Text>
                         </TextBlock>
@@ -90,8 +94,8 @@
 
             </Border>
 
-            <Border Grid.Column="1" Background="#7CE0DB">
-                <Image Source="\Images\logo-red.png"/>
+            <Border Grid.Column="1" Background="DodgerBlue">
+                <Image Source="\Images\inventory-hero.png"/>
             </Border>
         </Grid>
     </Border>
