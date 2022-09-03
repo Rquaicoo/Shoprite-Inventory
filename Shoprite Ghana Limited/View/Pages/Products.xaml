@@ -76,18 +76,18 @@
                 </Button>
             </Grid>
         </Border>
-        <DataGrid RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding userdataCollection}"
+        <DataGrid RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding ProductBinding}"
                   
-                  x:Name="UserDataGrid"
+                  x:Name="ProductDataGrid"
                   AutoGenerateColumns="False"
-                  Margin="10">
+                  Margin="10" SelectionChanged="ProductDataGrid_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="10"/>
-                <DataGridTextColumn Header="Name" Width="150"/>
-                <DataGridTextColumn Header="Category" Width="150"/>
-                <DataGridTextColumn Header="Price" Width="150"/>
-                <DataGridTextColumn Header="Reorder Level" Width="150"/>
-                <DataGridTextColumn Header="Barcode" Width="150"/>
+                <DataGridTextColumn Header="Id" Width="10" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="Name" Width="150" Binding="{Binding Path=name}"/>
+                <DataGridTextColumn Header="Category" Width="150" Binding="{Binding Path=categoryId}"/>
+                <DataGridTextColumn Header="Price" Width="150" Binding="{Binding Path=price}"/>
+                <DataGridTextColumn Header="Reorder Level" Width="150" Binding="{Binding Path=reorderlevel}"/>
+                <DataGridTextColumn Header="Barcode" Width="150" Binding="{Binding Path=null}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
