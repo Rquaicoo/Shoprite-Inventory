@@ -29,7 +29,7 @@
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
                     <Path Stretch="Uniform" Margin="10,10,10,0" HorizontalAlignment="Left" Fill="#2a84f1" Height="25" Width="25" Data="M11,13.5V21.5H3V13.5H11M12,2L17.5,11H6.5L12,2M17.5,13C20,13 22,15 22,17.5C22,20 20,22 17.5,22C15,22 13,20 13,17.5C13,15 15,13 17.5,13Z"/>
-                    <TextBlock Text="Cartegory Management" Margin="10,0,10,7" VerticalAlignment="Bottom" FontSize="15" FontWeight="Bold" Foreground="#2a84f1"></TextBlock>
+                    <TextBlock Text="Category Management" Margin="10,0,10,7" VerticalAlignment="Bottom" FontSize="15" FontWeight="Bold" Foreground="#2a84f1"></TextBlock>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
@@ -58,7 +58,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="0" VerticalAlignment="Bottom">
-                    <TextBlock Text="Cartegories" Margin="30,10,10,10" FontFamily="Bahnschrift" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Categories" Margin="30,10,10,10" FontFamily="Bahnschrift" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
                 </StackPanel>
 
                 <Button Grid.Column="1" Background="#2a84f1" Height="30" Width="50" Click="Button_Click">
@@ -75,14 +75,14 @@
                 </Button>
             </Grid>
         </Border>
-        <DataGrid RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding userdataCollection}"
+        <DataGrid RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="2" ItemsSource="{Binding CategoryDataBinding}"
                  
-                  x:Name="UserDataGrid"
+                  x:Name="CategoryDataGrid"
                   AutoGenerateColumns="False"
-                  Margin="10">
+                  Margin="10" SelectionChanged="UserDataGrid_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="10"/>
-                <DataGridTextColumn Header="Cartegory" Width="150"/>
+                <DataGridTextColumn Header="Id" Width="10" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="Category" Width="150" Binding="{Binding Path=name}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

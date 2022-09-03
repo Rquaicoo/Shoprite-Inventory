@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,43 +14,39 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
-using Shoprite_Ghana_Limited.View.CategoryManagement;
+using Shoprite_Ghana_Limited.View;
 
 namespace Shoprite_Ghana_Limited.View.Pages
 {
     /// <summary>
-    /// Interaction logic for Categories.xaml
+    /// Interaction logic for Sales.xaml
     /// </summary>
-    public partial class Categories : Page
+    public partial class SalesPage : Page
     {
-
         SqlConnection connection = new SqlConnection();
-        public Categories()
+        public SalesPage()
         {
             InitializeComponent();
             BindData();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ManageCategories manageCategories = new ManageCategories();
-            manageCategories.Show();
 
         }
 
         private void BindData()
         {
             //fetch data from database
-            string sql = "SELECT * FROM categories;";
+            string sql = "SELECT * FROM sales;";
             connection.openConnection();
 
             try
             {
                 MySqlDataAdapter cmd = new MySqlDataAdapter(sql, connection.get_connection());
                 DataSet ds = new DataSet();
-                cmd.Fill(ds, "CategoryDataBinding");
-                CategoryDataGrid.DataContext = ds;
+                cmd.Fill(ds, "SaleDataBinding");
+                SaleDataGrid.DataContext = ds;
             }
 
             catch (Exception ex)
@@ -57,11 +54,6 @@ namespace Shoprite_Ghana_Limited.View.Pages
                 MessageBox.Show("" + ex);
             }
 
-
-        }
-
-        private void UserDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
         }
     }

@@ -11,7 +11,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="29,25,0,0" TextWrapping="Wrap" Text="Enter username:" FontSize="12" VerticalAlignment="Top" Width="134" Height="24" FontWeight="Bold" Foreground="#FF1D92FF"/>
         <TextBlock HorizontalAlignment="Left" Margin="350,29,0,0" TextWrapping="Wrap" Text="Full name:" FontSize="12" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF1D92FF"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="29,43,0,0" TextWrapping="Wrap" Name="username" VerticalAlignment="Top" Width="233" Height="43" BorderBrush="Black" VerticalContentAlignment="Center">
+        <TextBox HorizontalAlignment="Left" Margin="29,43,0,0" TextWrapping="Wrap" Name="username" VerticalAlignment="Top" Width="220" Height="43" BorderBrush="Black" VerticalContentAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -20,7 +20,7 @@
             </TextBox.Resources>
         </TextBox>
 
-        <TextBox HorizontalAlignment="Left" Margin="347,46,0,0" Name="fullname" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Height="43" BorderBrush="Black" VerticalContentAlignment="Center">
+        <TextBox HorizontalAlignment="Left" Margin="347,46,0,0" Name="fullname" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Height="43" BorderBrush="Black" VerticalContentAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -31,7 +31,7 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="29,112,0,0" TextWrapping="Wrap" Text="Email:" FontSize="12" VerticalAlignment="Top" Width="96" Foreground="#FF1D92FF" FontWeight="Bold"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="29,129,0,0" Name="email" TextWrapping="Wrap"  VerticalAlignment="Top" Width="233" Height="45" TextChanged="TextBox_TextChanged" BorderBrush="Black" VerticalContentAlignment="Center">
+        <TextBox HorizontalAlignment="Left" Margin="29,129,0,0" Name="email" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220" Height="45" TextChanged="TextBox_TextChanged" BorderBrush="Black" VerticalContentAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -42,7 +42,7 @@
 
 
         <TextBlock HorizontalAlignment="Left" Margin="29,191,0,0" TextWrapping="Wrap" Text="Password:" FontSize="12" VerticalAlignment="Top" Width="96" FontWeight="Bold" Foreground="#FF1D92FF"/>
-        <TextBox HorizontalAlignment="Left" Margin="29,212,0,0" Name="password" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" Height="48" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" BorderBrush="Black">
+        <TextBox HorizontalAlignment="Left" Margin="29,212,0,0" Name="password" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Height="48" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" BorderBrush="Black">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
