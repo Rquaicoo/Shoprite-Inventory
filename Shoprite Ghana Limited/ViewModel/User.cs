@@ -11,9 +11,9 @@ namespace Shoprite_Ghana_Limited.ViewModel
 {
     internal class User
     {
-        private string username { get; set; }
-        private string email { get; set; }
-        private string password { get; set; }
+        public string username { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
         private string fullname { get; set; }
         private string role { get; set; }
         private string id { get; set; }
