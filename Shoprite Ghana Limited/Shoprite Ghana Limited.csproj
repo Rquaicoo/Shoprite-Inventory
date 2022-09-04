@@ -250,6 +250,7 @@
     <Folder Include="View\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="shoprite.sql" />
     <Resource Include="Images\inventory-hero.png" />
     <Content Include="Images\inventory-hero.svg" />
   </ItemGroup>
