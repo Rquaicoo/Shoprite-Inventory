@@ -109,7 +109,10 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
         {
          
                 connection.openConnection();
-                string sql = "SELECT price FROM products WHERE id=" + comboBox.SelectedIndex+1 + ";";
+
+                int prodId = Convert.ToInt32(comboBox.SelectedIndex) + 1;
+            
+                string sql = "SELECT price FROM products WHERE id=" + prodId + ";";
 
                 cmd = new MySqlCommand(sql, connection.get_connection());
 
@@ -147,7 +150,6 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
             string sql = "SELECT id FROM tills WHERE status='open';";
 
             cmd = new MySqlCommand(sql, connection.get_connection());
-            MessageBox.Show("" + comboBox.SelectedIndex);
 
             try
             {
@@ -181,7 +183,7 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
             this.sales[index].attendantId = attendantId;
             this.sales[index].discount = discountValue;
             this.sales[index].tillId = this.till;
-            MessageBox.Show("" + sales[index].amount);
+          
 
             this.index ++;
            
@@ -202,6 +204,16 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
                 try
                 {
                     string statement = $"INSERT INTO sales (productId, quantity, amount, discount, tillId, attendantId) VALUES (" + sales[i].productId + "," + sales[i].quantity + "," + sales[i].amount + "," + sales[i].discount + "," + sales[i].tillId + "," + sales[i].attendantId + ");";
+ 
+                        try
+                        {
+                            cmd = new MySqlCommand(statement, connection.get_connection());
+                            cmd.ExecuteNonQuery();                 
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show("" + ex);
+                        }
 
                 }
 
@@ -217,6 +229,11 @@ namespace Shoprite_Ghana_Limited.View.Pages.Attendant
             MessageBox.Show("Click OK to print reciept");
 
             connection.closeConnection();
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
