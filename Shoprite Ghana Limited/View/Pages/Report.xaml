@@ -61,7 +61,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="160" />
-          
+
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="0" VerticalAlignment="Bottom">
@@ -74,10 +74,14 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
-                   <RowDefinition/>                
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" HorizontalAlignment="Center">
                     <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="79*"/>
+                            <RowDefinition Height="21*"/>
+                        </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="170"/>
                             <ColumnDefinition Width="200"/>
@@ -85,7 +89,7 @@
                             <ColumnDefinition Width="200"/>
                         </Grid.ColumnDefinitions>
 
-                        <Border Grid.Column="0" Margin="0,0,0,0"  BorderBrush="DodgerBlue" BorderThickness="2" Height="100" CornerRadius="10" Background="DodgerBlue">
+                        <Border Grid.Column="0"  BorderBrush="DodgerBlue" BorderThickness="2" Height="100" CornerRadius="10" Background="DodgerBlue" Grid.RowSpan="2">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Path VerticalAlignment="Center" Fill="White" Data="M12,5A3.5,3.5 0 0,0 8.5,8.5A3.5,3.5 0 0,0 12,12A3.5,3.5 0 0,0 15.5,8.5A3.5,3.5 0 0,0 12,5M12,7A1.5,1.5 0 0,1 13.5,8.5A1.5,1.5 0 0,1 12,10A1.5,1.5 0 0,1 10.5,8.5A1.5,1.5 0 0,1 12,7M5.5,8A2.5,2.5 0 0,0 3,10.5C3,11.44 3.53,12.25 4.29,12.68C4.65,12.88 5.06,13 5.5,13C5.94,13 6.35,12.88 6.71,12.68C7.08,12.47 7.39,12.17 7.62,11.81C6.89,10.86 6.5,9.7 6.5,8.5C6.5,8.41 6.5,8.31 6.5,8.22C6.2,8.08 5.86,8 5.5,8M18.5,8C18.14,8 17.8,8.08 17.5,8.22C17.5,8.31 17.5,8.41 17.5,8.5C17.5,9.7 17.11,10.86 16.38,11.81C16.5,12 16.63,12.15 16.78,12.3C16.94,12.45 17.1,12.58 17.29,12.68C17.65,12.88 18.06,13 18.5,13C18.94,13 19.35,12.88 19.71,12.68C20.47,12.25 21,11.44 21,10.5A2.5,2.5 0 0,0 18.5,8M12,14C9.66,14 5,15.17 5,17.5V19H19V17.5C19,15.17 14.34,14 12,14M4.71,14.55C2.78,14.78 0,15.76 0,17.5V19H3V17.07C3,16.06 3.69,15.22 4.71,14.55M19.29,14.55C20.31,15.22 21,16.06 21,17.07V19H24V17.5C24,15.76 21.22,14.78 19.29,14.55M12,16C13.53,16 15.24,16.5 16.23,17H7.77C8.76,16.5 10.47,16 12,16Z" />
@@ -95,7 +99,7 @@
                             </StackPanel>
                         </Border>
 
-                        <Border Grid.Column="1" Margin="30,0,0,0"  BorderBrush="#FF1E9275" BorderThickness="2" Height="100" CornerRadius="10" Background="#FF1E9275">
+                        <Border Grid.Column="1" Margin="30,0,0,0"  BorderBrush="#FF1E9275" BorderThickness="2" Height="100" CornerRadius="10" Background="#FF1E9275" Grid.RowSpan="2">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Path VerticalAlignment="Center" Fill="White" Data="M2,17H22V21H2V17M6.25,7H9V6H6V3H14V6H11V7H17.8C18.8,7 19.8,8 20,9L20.5,16H3.5L4.05,9C4.05,8 5.05,7 6.25,7M13,9V11H18V9H13M6,9V10H8V9H6M9,9V10H11V9H9M6,11V12H8V11H6M9,11V12H11V11H9M6,13V14H8V13H6M9,13V14H11V13H9M7,4V5H13V4H7Z" />
@@ -105,7 +109,7 @@
                             </StackPanel>
                         </Border>
 
-                        <Border Grid.Column="2" Margin="30,0,0,0"  BorderBrush="Black" BorderThickness="2" Height="100" CornerRadius="10" Background="Black">
+                        <Border Grid.Column="2" Margin="30,0,0,0"  BorderBrush="Black" BorderThickness="2" Height="100" CornerRadius="10" Background="Black" Grid.RowSpan="2">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Path VerticalAlignment="Center" Fill="White" Data="M17,2A2,2 0 0,1 19,4V7A2,2 0 0,1 17,9V17C17,17.85 16.5,18.57 15.74,18.86L9.5,21.77C8.5,22.24 7.29,21.81 6.83,20.81L6,19C5.5,18 5.95,16.8 6.95,16.34L10,14.91V9A2,2 0 0,1 8,7V4A2,2 0 0,1 10,2H17M10,4V7H17V4H10Z" />
@@ -115,7 +119,7 @@
                             </StackPanel>
                         </Border>
 
-                        <Border Grid.Column="3" Margin="30,0,0,0"  BorderBrush="#FF7B1212" BorderThickness="2" Height="100" CornerRadius="10" Background="#FF7B1212">
+                        <Border Grid.Column="3" Margin="30,0,0,0"  BorderBrush="#FF7B1212" BorderThickness="2" Height="100" CornerRadius="10" Background="#FF7B1212" Grid.RowSpan="2">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Path VerticalAlignment="Center" Fill="White" Data="M2,17H22V21H2V17M6.25,7H9V6H6V3H14V6H11V7H17.8C18.8,7 19.8,8 20,9L20.5,16H3.5L4.05,9C4.05,8 5.05,7 6.25,7M13,9V11H18V9H13M6,9V10H8V9H6M9,9V10H11V9H9M6,11V12H8V11H6M9,11V12H11V11H9M6,13V14H8V13H6M9,13V14H11V13H9M7,4V5H13V4H7Z" />
