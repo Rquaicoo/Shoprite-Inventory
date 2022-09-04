@@ -86,6 +86,9 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NavigationButton.cs" />
+    <Compile Include="View\Pages\Attendant\DailyReport.xaml.cs">
+      <DependentUpon>DailyReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\Attendant\Sale.xaml.cs">
       <DependentUpon>Sale.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Attendant\DailyReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
