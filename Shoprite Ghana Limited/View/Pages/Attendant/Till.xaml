@@ -9,7 +9,8 @@
       Title="Till">
 
     <Grid Background="White">
-        <Button Content="Start Till" HorizontalAlignment="Left" Margin="121,168,0,0" VerticalAlignment="Top" Height="94" Width="182" Background="#FF227127" Foreground="#FFEAEAEA" FontSize="30" Click="Button_Click">
+        <Image Source="/Images/logo-red.png" Margin="192,0,0,0" Height="183" VerticalAlignment="Top" HorizontalAlignment="Left" Width="555"/>
+        <Button Content="Start Till" HorizontalAlignment="Left" Margin="171,0,0,0" VerticalAlignment="Center" Height="74" Width="160" Background="#FF185F40" Foreground="#FFEAEAEA" FontSize="20" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -18,7 +19,7 @@
             </Button.Resources>
         </Button>
 
-        <Button Content="End TIll" HorizontalAlignment="Left" Margin="418,168,0,0" VerticalAlignment="Top" Height="94" Width="182" Background="#FFAF2A2A" Foreground="White" FontSize="30" Click="Button_Click_1">
+        <Button Content="End TIll" HorizontalAlignment="Left" Margin="439,0,0,0" VerticalAlignment="Center" Height="74" Width="160" Background="#FFAF2A2A" Foreground="White" FontSize="20" Click="Button_Click_1">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>

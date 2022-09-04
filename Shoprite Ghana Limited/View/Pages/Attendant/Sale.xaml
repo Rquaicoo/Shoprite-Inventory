@@ -109,7 +109,7 @@
                               MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border 
                                 x:Name="DropDownBorder"
-                                Background="White"
+                                Background="DodgerBlue"
 
                                 BorderThickness="1"
                                 BorderBrush="Black"/>
@@ -182,7 +182,7 @@
         <Grid Margin="0,30,0,0" >
             <TextBlock HorizontalAlignment="Left" Margin="26,46,0,0" TextWrapping="Wrap" Text="Item name" VerticalAlignment="Top" Foreground="#FF1D92FF"/>
 
-            <ComboBox  HorizontalAlignment="Left" Margin="26,71,0,0" VerticalAlignment="Top" Width="166" Height="35" BorderBrush="White" Foreground="Black" IsEditable="True" Name="comboBox">
+            <ComboBox  HorizontalAlignment="Left" Margin="26,71,0,0" VerticalAlignment="Top" Width="166" Height="35" BorderBrush="White" Foreground="Black" IsEditable="True" Name="comboBox" SelectionChanged="comboBox_SelectionChanged">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
